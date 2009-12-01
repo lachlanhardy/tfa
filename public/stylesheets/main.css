@@ -50,6 +50,7 @@ body {background: #0f0f0f; color: #fefefe; font: 62.5%/1.4 'Helvetica Neue', Hel
             p em {font-style: italic;}
 
     h2 {color: gold; font-size: 1.3em; margin: 0 0 1em 0; text-align: center;}
+        h2 strong {font-size: 1.4em;}
             
     #footer {background: #0f0f0f url(images/tony-hairy-abbott.gif) no-repeat 0 0; font-size: 0.8em; font-style: italic; padding:  640px 0 0.5em 0; width: 470px;}
         #footer p {margin: 0; padding: 0.5em; text-align: center; width: auto;}

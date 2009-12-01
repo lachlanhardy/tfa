@@ -50,7 +50,7 @@ body {background: #0f0f0f; color: #fefefe; font: 62.5%/1.4 'Helvetica Neue', Hel
             p em {font-style: italic;}
             
     #footer {background: #0f0f0f url(images/tony-hairy-abbott.gif) no-repeat 0 0; font-size: 0.8em; font-style: italic; padding:  640px 0 0.5em 0; width: 470px;}
-        #footer p {margin: 0; padding: 0.2em; text-align: center; width: auto;}
+        #footer p {margin: 0; padding: 0.5em; text-align: center; width: auto;}
     
     #page {min-height: 60em; padding: 2em 1em 4em 1em;}
         #page ul {}

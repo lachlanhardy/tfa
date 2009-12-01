@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'twitter'
 require 'haml'
+require 'pp'
 
 # reset stylesheet
 get '/stylesheets/reset.css' do
@@ -28,6 +29,8 @@ get '/' do
             gsub(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/i, '<a href="\1">\1</a>').
             gsub(/(Tony Abbott\W?)/i, '<strong>\1</strong>').
             gsub(/(fuck\W|fucking\W|fucked\W)/i, '<em>\1</em>')
+            
+          
       end
     end
     

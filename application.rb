@@ -21,7 +21,7 @@ get '/' do
   if $last_updated + 300 < Time.now # hasn't been updated for 5 mins. - 300 secs
     @results = []
   
-    @search = Twitter::Search.new('"tony abbott" fuck OR fucking OR fucked')
+    @search = Twitter::Search.new('"tony abbott" fuck OR fucking OR fucked OR shit')
     @search.per_page(100)
     @search.each do |item|
       unless BLACKLISTED_STRINGS.any? {|i| item["text"].downcase.match(i.downcase)}
@@ -29,7 +29,7 @@ get '/' do
                                     gsub(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/i, '<a href="\1">\1</a>').
                                     gsub(/(@\w[a-z]+)(\s|\S)/i, '<a href="http://twitter.com/\1">\1</a>').
                                     gsub(/(Tony Abbott\W?)/i, '<strong>\1</strong>').
-                                    gsub(/(fuck\W|fucking\W|fucked\W)/i, '<em>\1</em>')
+                                    gsub(/(fuck\W|fucking\W|fucked\W|shit\W)/i, '<em>\1</em>')
       end
     end
     

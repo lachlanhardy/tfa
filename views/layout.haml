@@ -1,0 +1,26 @@
+!!! strict
+%html
+  %head
+    %title Tony Fucking Abbott?!?!
+    %link{:rel => "icon", :href => "/images/favicon.ico", :type => "image/x-icon"}
+
+    %link{:rel=>'stylesheet', :href=>'/stylesheets/reset.css', :type => "text/css"} 
+    %link{:rel=>'stylesheet', :href=>'/stylesheets/main.css', :type => "text/css"} 
+    
+  %body 
+    #wrapper
+      %h1 
+        %a{:href => "/"} Tony Fucking Abbott?!?!!
+      
+      #page
+        = yield
+      
+      #footer
+        %p
+          Made by 
+          %a{:href => "http://lachstock.com.au/"} Lachlan Hardy
+          and some good friends to express some frustration and rage by sharing that of others.
+    
+  / reinvigorate tracking code
+  %script{ :type => "text/javascript",  :src => "http://include.reinvigorate.net/re_.js"}
+  %script{ :type => "text/javascript"} re_("v1qd1-214gjdk0e0");

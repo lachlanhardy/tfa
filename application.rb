@@ -26,11 +26,10 @@ get '/' do
     @search.each do |item|
       unless BLACKLISTED_STRINGS.any? {|i| item["text"].downcase.match(i.downcase)}
           @results << item["text"].gsub(/^@\w[a-z]+\s/, '').
-            gsub(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/i, '<a href="\1">\1</a>').
-            gsub(/(Tony Abbott\W?)/i, '<strong>\1</strong>').
-            gsub(/(fuck\W|fucking\W|fucked\W)/i, '<em>\1</em>')
-            
-          
+                                    gsub(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/i, '<a href="\1">\1</a>').
+                                    gsub(/(@\w[a-z]+)(\s|\S)/i, '<a href="http://twitter.com/\1">\1</a>').
+                                    gsub(/(Tony Abbott\W?)/i, '<strong>\1</strong>').
+                                    gsub(/(fuck\W|fucking\W|fucked\W)/i, '<em>\1</em>')
       end
     end
     
@@ -40,6 +39,7 @@ get '/' do
   end
   Cache["index"]
 end
+
 
 # Configure Block.
 configure do

@@ -43,13 +43,13 @@ TOC
 /* - =Structure - */
 body {background: #0f0f0f; color: #fefefe; font: 62.5%/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;}
 
-#wrapper {border: 0.2em solid #fff; border-top: 0; border-bottom: 0; font-size: 1.6em; margin: 0 auto 0 auto; position: relative; width: 470px;}
+#wrapper {border: 0.2em solid #fff; border-top: 0; border-bottom: 0; font-size: 1.6em; margin: 0 auto 0 auto; position: relative; /* width: 470px; */}
     h1 {background: #0f0f0f url(images/tony-fucking-abbott.png) no-repeat 0 0; margin: 0; text-indent: -9999px;}
         h1 a {display: block; min-height: 270px;}
-        p {font-size: 0.9em; margin: 0 auto 1em auto; width: 380px;}
+        p {font-size: 0.9em; margin: 0 auto 1em auto; /* width: 380px; */}
             p em {font-style: italic;}
             
-    #footer {background: #0f0f0f url(images/tony-hairy-abbott.gif) no-repeat 0 0; font-size: 0.8em; font-style: italic; padding:  640px 0 0.5em 0; width: 470px;}
+    #footer {background: #0f0f0f url(images/tony-hairy-abbott.gif) no-repeat 0 0; font-size: 0.8em; font-style: italic; padding:  640px 0 0.5em 0; /* width: 470px; */}
         #footer p {margin: 0; padding: 0.2em; text-align: center; width: auto;}
     
     #page {min-height: 60em; padding: 2em 1em 4em 1em;}

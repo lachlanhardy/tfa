@@ -10,7 +10,7 @@ DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://tfa.db')
 DB.create_table? :tweets do
   primary_key :id
   String :content
-  BigNum :twitter_id
+  BigNum :twitter_id, :type => :bigint
 end
 tweets = DB[:tweets]
 

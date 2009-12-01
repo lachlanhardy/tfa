@@ -24,8 +24,8 @@ TOC
 	/* -- =Generic Text -- */
 
 		/* --- =Links --- */
-		a:link {color: #000;}
-		a:visited {color: #333;}
+		a:link {color: #fff;}
+		a:visited {color: #ddd;}
      a:hover, a:active, a:focus {color: #c00;}
 
 		

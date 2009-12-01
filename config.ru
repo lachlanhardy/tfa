@@ -1,5 +1,4 @@
-require "minigems"
-# require "rubygems"
+require "rubygems"
 require "sinatra"
 
 root_dir = File.dirname(__FILE__)

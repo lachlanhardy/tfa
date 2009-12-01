@@ -18,7 +18,7 @@ end
 
 # homepage
 get '/' do
-  if $last_updated + 300 < Time.now # hasn't been updated for 5 mins. - 300 secs
+  if $last_updated + 60 < Time.now # hasn't been updated for 1 mins. - 60 secs
     @results = []
   
     @search = Twitter::Search.new('"tony abbott" fuck OR fucking OR fucked OR shit')

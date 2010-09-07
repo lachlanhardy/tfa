@@ -33,7 +33,7 @@ get '/' do
 
   # load all the new tweets into the DB
   while true do
-    @search = Twitter::Search.new('"tony abbott" fuck OR fucking OR fucked OR shit')
+    @search = Twitter::Search.new('"tony abbott" shit OR fuck OR cunt OR ass OR arse OR arsehole OR prick OR bastard')
     # 20 per page - twitter docs say 100, but seems to be less, so we
     # cover our bases for pagination. this pagination method also leaves
     # a small possibility of duplicates, but it's not a big deal.
@@ -60,7 +60,7 @@ get '/' do
                                 gsub(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/i, '<a href="\1">\1</a>').
                                 gsub(/(@\w[a-z]+)(\s|\S)/i, '<a href="http://twitter.com/\1">\1</a>').
                                 gsub(/(Tony Abbott\W?)/i, '<strong>\1</strong>').
-                                gsub(/(fuck\W|fucking\W|fucked\W|shit\W)/i, '<em>\1</em>')
+                                gsub(/(fuck\W|fucking\W|fucked\W|shit\W|ass\W|arse\W|arsehole\W|prick\W|bastard\W|cunt\W)/i, '<em>\1</em>')
     else
       puts "This was blacklisted: #{item[:content]}"
     end

@@ -2,7 +2,6 @@ require 'rubygems'
 require 'sinatra'
 require 'twitter'
 require 'haml'
-require 'pp'
 require 'sequel'
 
 # Database setup

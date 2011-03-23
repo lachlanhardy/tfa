@@ -58,13 +58,13 @@ get '/' do
   @all_results = tweets.order(:twitter_id.desc).each do |item|
     # ignore items in the blacklist file or that start with rt/RT (retweets)
     unless BLACKLISTED_STRINGS.any? {|i| item[:content].downcase.match(i.downcase)} || item[:content].downcase.match(/^rt/)
-      @results << '<a name="' + item[:id].to_s + '"></a>' +
+      @results << '<p id="' + item[:id].to_s + '">' +
         item[:content].gsub(/^@\w[a-z]+\s/, '').
         gsub(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/i, '<a href="\1">\1</a>').
         gsub(/(@\w[a-z]+)(\s|\S)/i, '<a href="http://twitter.com/\1">\1</a>').
         gsub(/(Tony Abbott\W?)/i, '<strong>\1</strong>').
         gsub(/(fuck\W|fucking\W|fucked\W|shit\W|arse\W|arsehole\W|prick\W|bastard\W|cunt\W)/i, '<em>\1</em>') +
-        '<a class="permalink" href="#' + item[:id].to_s + '">link</a>'
+        '</p><a class="permalink" href="#' + item[:id].to_s + '">permalink</a>'
     else
       puts "This was blacklisted: #{item[:content]}"
     end

@@ -58,15 +58,18 @@ body {background: #0f0f0f; color: #fefefe; font: 62.5%/1.4 'Helvetica Neue', Hel
     #page {min-height: 60em; padding: 2em 1em 4em 1em;}
         #page ul {}
             #page ul li {font-size: 1.6em; margin: 0 1em 2.5em 1em; overflow: hidden;}
-                #page ul li strong,
-                #page ul li em {background: #0f0f0f; color: #c00; font-size: 1.2em; font-weight: 700;}
-                
-                #page ul li em {color: gold;}
-                
+                #page ul li p {margin: 0;}
+                    #page ul li strong,
+                    #page ul li em {background: #0f0f0f; color: #c00; font-size: 1.2em; font-weight: 700;}
+
+                    #page ul li em {color: gold;}
+
+                    #page ul li a.permalink {display: block; float: right; font-size: 0.6em; line-height: 1; text-align: right; width: auto; }
+
                 #page p {margin: 0 0 1em 0;}
                 #page a:link {color: #fff;}
                 #page a:visited {color: #ddd;}
                 #page a:hover, 
                 #page a:active, 
                 #page a:focus {color: #c00;}
-            
+

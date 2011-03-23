@@ -1,8 +1,6 @@
 require 'rubygems'
-require 'sinatra'
-require 'twitter'
-require 'haml'
-require 'sequel'
+require 'bundler'
+Bundler.require
 
 # Database setup
 DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://tfa.db')
@@ -28,7 +26,7 @@ end
 # homepage
 get '/' do
   # get the max id from the database to pass to our search query
-  since_id = tweets.max(:twitter_id) 
+  since_id = tweets.max(:twitter_id)
   page = 1
 
   # load all the new tweets into the DB
@@ -50,7 +48,7 @@ get '/' do
     break if item_count < 20
     page = page + 1
   end
- 
+
   @results = []
 
   @all_results = tweets.order(:twitter_id.desc).each do |item|
@@ -68,7 +66,7 @@ get '/' do
 
   # Make heroku cache this page
   response.headers['Cache-Control'] = 'public, max-age=300'
-    
+
   haml :index, :options => {:format => :html4, :attr_wrapper => '"'}
 end
 
@@ -78,8 +76,8 @@ configure do
   BLACKLISTED_STRINGS = []
   # read blacklist file.
   File.open(File.join(File.dirname(__FILE__), '/blacklist.txt'), 'r') do |file|
-    while line = file.gets  
-        BLACKLISTED_STRINGS << line.strip 
-    end  
+    while line = file.gets
+        BLACKLISTED_STRINGS << line.strip
+    end
   end
 end

@@ -25,6 +25,10 @@ end
 
 # homepage
 get '/' do
+  # so hacky
+  if @env['SERVER_NAME'] == 'tonyfuckingabbott.heroku.com'
+    redirect 'http://tonyfuckingabbott.com', 301
+  end
   # get the max id from the database to pass to our search query
   since_id = tweets.max(:twitter_id)
   page = 1
